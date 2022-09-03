@@ -1,6 +1,5 @@
 import { useState } from "react"
 import {
-   createAuthUserWithEmailAndPassword,
    createUserDocumentFromAuth,
    signInAuthUserWithEmailAndPassword,
    signInWithGooglePopup,
@@ -24,19 +23,17 @@ const SignInForm = () => {
    }
 
    const signInWithGoogle = async () => {
-      const { user } = await signInWithGooglePopup()
-      const userDocRef = await createUserDocumentFromAuth(user)
+     await signInWithGooglePopup()
    }
 
    const handleSubmit = async (e) => {
       e.preventDefault()
 
       try {
-         const response = await signInAuthUserWithEmailAndPassword(
+         const { user } = await signInAuthUserWithEmailAndPassword(
             email,
             password
          )
-         console.log(response)
 
          resetFormFields()
       } catch (error) {
@@ -82,7 +79,11 @@ const SignInForm = () => {
             />
             <div className="buttons-container">
                <Button type="submit">Sign In</Button>
-               <Button type='button' buttonType="google" onClick={signInWithGoogle}>
+               <Button
+                  type="button"
+                  buttonType="google"
+                  onClick={signInWithGoogle}
+               >
                   Google sign In
                </Button>
             </div>

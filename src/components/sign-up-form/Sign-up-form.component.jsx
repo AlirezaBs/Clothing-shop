@@ -6,7 +6,7 @@ import {
 import FormInput from "../form-input/form-input.component"
 import Button from "../button/Button.component"
 
-import './sign-up-form.styles.scss'
+import "./sign-up-form.styles.scss"
 
 const defaultFormFields = {
    displayName: "",
@@ -19,10 +19,11 @@ const SignUpForm = () => {
    const [formFields, setFormFirelds] = useState(defaultFormFields)
    const { displayName, email, password, confirmPassword } = formFields
 
+
    const resetFormFields = () => {
       setFormFirelds(defaultFormFields)
    }
-   
+
    const handleSubmit = async (e) => {
       e.preventDefault()
 
@@ -43,7 +44,7 @@ const SignUpForm = () => {
          if (error.code === "auth/email-already-in-use") {
             alert("Cannot create user, email already in use")
          } else {
-            console.log('user creation encountered on error', error)
+            console.log("user creation encountered on error", error)
          }
       }
    }
@@ -56,10 +57,10 @@ const SignUpForm = () => {
    return (
       <div className="sign-up-container">
          <h2>Don't have an account?</h2>
-         <span >Sign up with your email and password</span>
+         <span>Sign up with your email and password</span>
          <form onSubmit={handleSubmit}>
             <FormInput
-               label='Display name'
+               label="Display name"
                type="text"
                name="displayName"
                onChange={handleChange}
@@ -68,7 +69,7 @@ const SignUpForm = () => {
             />
 
             <FormInput
-               label='Email'
+               label="Email"
                type="email"
                name="email"
                onChange={handleChange}
@@ -77,7 +78,7 @@ const SignUpForm = () => {
             />
 
             <FormInput
-               label='Password'
+               label="Password"
                type="password"
                name="password"
                onChange={handleChange}
@@ -86,7 +87,7 @@ const SignUpForm = () => {
             />
 
             <FormInput
-               label='Confirm Password'
+               label="Confirm Password"
                type="password"
                name="confirmPassword"
                onChange={handleChange}

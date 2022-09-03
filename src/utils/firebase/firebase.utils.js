@@ -5,17 +5,19 @@ import {
    createUserWithEmailAndPassword,
    GoogleAuthProvider,
    signInWithEmailAndPassword,
+   signOut,
+   onAuthStateChanged,
 } from "firebase/auth"
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"
 
 const firebaseConfig = {
-   apiKey: "AIzaSyBbxBBUp1cJ8hyjff1_BHktLmNtafQwzbY",
-   authDomain: "clothing-shop-bf926.firebaseapp.com",
-   projectId: "clothing-shop-bf926",
-   storageBucket: "clothing-shop-bf926.appspot.com",
-   messagingSenderId: "938090526296",
-   appId: "1:938090526296:web:e1fb9938a9cfe62de23c2d",
-   measurementId: "G-TBTCEDN51T",
+   apiKey: import.meta.env.VITE_API_KEY,
+   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+   projectId: import.meta.env.VITE_PROJECT_ID,
+   storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+   messagingSenderId: import.meta.env.VITE_MESSAGINGSENDER_ID,
+   appId: import.meta.env.VITE_APP_ID,
+   measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 }
 
 // Initialize Firebase
@@ -28,8 +30,10 @@ GoogleProvider.setCustomParameters({
 })
 
 export const auth = getAuth()
+
 export const signInWithGooglePopup = () => signInWithPopup(auth, GoogleProvider)
 
+// access to database
 export const db = getFirestore()
 
 export const createUserDocumentFromAuth = async (
@@ -71,3 +75,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
    return await signInWithEmailAndPassword(auth, email, password)
 }
+
+export const signOutUser = async () => await signOut(auth)
+
+export const onAuthStateChangedListener = (callback) => 
+   onAuthStateChanged(auth, callback)
