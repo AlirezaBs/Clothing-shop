@@ -23,4 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+<<<<<<< HEAD
 .env.local
+=======
+.env
+>>>>>>> 3557f6ecc95f277af176a1416285c4b185a329ff
