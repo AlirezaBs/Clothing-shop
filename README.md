@@ -25,7 +25,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-4. Create `.env` file and enter your APIs in it [env at vite](https://vitejs.dev/guide/env-and-mode.html)
+4. Create `.env` file and enter your APIs in it  ([env at vite](https://vitejs.dev/guide/env-and-mode.html))
    ```js
     VITE_API_KEY=  ...
     VITE_AUTH_DOMAIN=  ...
