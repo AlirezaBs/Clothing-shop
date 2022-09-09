@@ -8,7 +8,16 @@ import {
    signOut,
    onAuthStateChanged,
 } from "firebase/auth"
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"
+import {
+   getFirestore,
+   doc,
+   getDoc,
+   setDoc,
+   collection,
+   writeBatch,
+   query,
+   getDocs,
+} from "firebase/firestore"
 
 const firebaseConfig = {
    apiKey: import.meta.env.VITE_API_KEY,
@@ -35,6 +44,36 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, GoogleProvider)
 
 // access to database
 export const db = getFirestore()
+
+export const addCollectionAndDocuments = async (
+   collectionKey,
+   objectsToAdd
+) => {
+   const collectionRef = collection(db, collectionKey)
+   const batch = writeBatch(db)
+
+   objectsToAdd.forEach((object) => {
+      const docRef = doc(collectionRef, object.title.toLowerCase())
+      batch.set(docRef, object)
+   })
+
+   await batch.commit()
+   console.log("finished")
+}
+
+export const getCategoriesAndDocuments = async () => {
+   const collectionRef = collection(db, "categories")
+   const q = query(collectionRef)
+
+   const querySnapshot = await getDocs(q)
+   const categoryMap = querySnapshot.docs.reduce((accumulator, docSnapshot) => {
+      const {title, items} = docSnapshot.data()
+      accumulator[title.toLowerCase()] = items
+      return accumulator
+   }, {})
+
+   return categoryMap
+}
 
 export const createUserDocumentFromAuth = async (
    userAuth,
@@ -78,5 +117,5 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const signOutUser = async () => await signOut(auth)
 
-export const onAuthStateChangedListener = (callback) => 
+export const onAuthStateChangedListener = (callback) =>
    onAuthStateChanged(auth, callback)
