@@ -1,3 +1,6 @@
+## DEMO
+
+to see demo [click here](https://clothing-shop-five.vercel.app/)
 
 ## Getting Started
 
