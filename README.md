@@ -3,10 +3,6 @@
 
 
 
-## DEMO
-
-to see demo [click here](https://clothing-shop-dpbc21b3n-alirezabs.vercel.app/shop) (windows mode only)
-
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
