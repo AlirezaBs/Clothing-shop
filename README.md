@@ -1,3 +1,8 @@
+#### firebase sections broken as the result of Iranian gov. filtering!!
+
+
+
+
 ## DEMO
 
 to see demo [click here](https://clothing-shop-dpbc21b3n-alirezabs.vercel.app/shop) (windows mode only)
