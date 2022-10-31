@@ -1,7 +1,6 @@
-const SHOP_DATA = [
-  {
-    title: 'Hats',
-    items: [
+const SHOP_DATA = {
+  
+    'Hats': [
       {
         id: 1,
         name: 'Brown Brim',
@@ -57,10 +56,9 @@ const SHOP_DATA = [
         price: 16,
       },
     ],
-  },
-  {
-    title: 'Sneakers',
-    items: [
+
+  
+     'Sneakers':[
       {
         id: 10,
         name: 'Adidas NMD',
@@ -110,10 +108,9 @@ const SHOP_DATA = [
         price: 200,
       },
     ],
-  },
-  {
-    title: 'Jackets',
-    items: [
+  
+  
+    'Jackets':[
       {
         id: 18,
         name: 'Black Jean Shearling',
@@ -145,10 +142,9 @@ const SHOP_DATA = [
         price: 185,
       },
     ],
-  },
-  {
-    title: 'Womens',
-    items: [
+
+  
+     'Womens':[
       {
         id: 23,
         name: 'Blue Tanktop',
@@ -192,10 +188,9 @@ const SHOP_DATA = [
         price: 20,
       },
     ],
-  },
-  {
-    title: 'Mens',
-    items: [
+  
+  
+     'Mens': [
       {
         id: 30,
         name: 'Camo Down Vest',
@@ -233,8 +228,8 @@ const SHOP_DATA = [
         price: 25,
       },
     ],
-  },
-];
+  
+  };
 
 
 export default SHOP_DATA
