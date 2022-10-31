@@ -1,5 +1,5 @@
 #### firebase sections broken as the result of Iranian gov. filtering!!
-
+    authentication and database doesn't work any more
 
 
 
@@ -54,6 +54,8 @@ _Below is an example of how you can instruct your audience on installing and set
     * Routing  v6
     * working with firebase (authentication and database)
     * react context
+    * reducers
+    * redux
    
     
 
