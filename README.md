@@ -1,6 +1,6 @@
 ## DEMO
 
-to see demo [click here](https://clothing-shop-cnlv0ax24-alirezabs.vercel.app/)
+to see demo [click here](https://clothing-shop-dpbc21b3n-alirezabs.vercel.app/shop) (windows mode only)
 
 ## Getting Started
 
