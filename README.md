@@ -1,4 +1,4 @@
-#### firebase sections broken as the result of Iranian gov. filtering!!
+#### firebase sections broken as the result of US gov. limitation!!
     authentication and database doesn't work any more
 
 
